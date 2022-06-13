@@ -2,7 +2,7 @@
 
 ## Configuration
 
-* In the [config.js](https://replit.com/@AhmedYoutube/system-bot-by-Ahmed#config.js) You can find numerous settings which can be modified if you are going to self host.
+* In the [config.js](https://github.com/3bkrenoDev/system-bot-by-Ahmed/blob/main/config.js) You can find numerous settings which can be modified if you are going to self host.
 * The environment variables.
   * **"globalBot"**-This is if you want your bot used by any server, make it true if you want that and make it false if you don't.
   * **"guildID"**-Your server's id if your bot isn't global.
