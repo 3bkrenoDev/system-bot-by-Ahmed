@@ -1,5 +1,5 @@
 const { Client, CommandInteraction,MessageEmbed } = require("discord.js");
-const { Util: { splitMessage } } = require("discord.js");
+let { splitMessage } = require("../../Functions/utils.js")
 
 module.exports = {
   name: "bots",
