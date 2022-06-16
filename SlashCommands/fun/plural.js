@@ -8,6 +8,7 @@ module.exports = {
   description: 'Guess the word plural.',
   type: 'CHAT_INPUT',
   botperms:["ATTACH_FILES"],
+  cooldownGames:true,
   run:async(client, interaction,args,guildData) => {
     let cooldown = client.cooldownGames.get(interaction.commandName)
     let word = words[Math.floor(Math.random() * words.length)];
