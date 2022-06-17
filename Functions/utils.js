@@ -3,7 +3,7 @@ let background1 ="./fun.png"
 // ارفع الصورة العاوزها وسميها ب fun.png
 module.exports = {
   setLongTimeout:(callback, timeout_ms) => {
-    if(timeout_ms> 2147483647){setTimeout(function(){setLongTimeout(callback,(timeout_ms- 2147483647))},2147483647)}else {setTimeout(callback,timeout_ms)}
+    if(timeout_ms> 2147483647){setTimeout(function(){module.exports.setLongTimeout(callback,(timeout_ms- 2147483647))},2147483647)}else {setTimeout(callback,timeout_ms)}
   },
   createFunCanvas:async(word,question,time) => {
     time = `لديك ${time} ثانية`;
