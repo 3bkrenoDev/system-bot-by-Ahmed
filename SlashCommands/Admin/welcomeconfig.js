@@ -217,6 +217,7 @@ guildData.welcome.channel = channel.id
       let nameArray = pic.name.split('.'); 
       let attEx = nameArray[nameArray.length - 1] 
       if (!formats.includes(attEx)) return interaction.reply(`**🙄 - You can only upload files of this type ${formats}**`);
+      if(pic.size >  2000000) return interaction.reply(`**🙄 - You can't upload files more than 2MB**`);
       let url = pic.url
       let pics = await axios({ url, responseType: "arraybuffer" }).then(
       (res) => Buffer.from(res.data, "binary").toString("base64"))
