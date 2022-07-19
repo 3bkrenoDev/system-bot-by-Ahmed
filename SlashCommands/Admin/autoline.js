@@ -67,6 +67,7 @@ module.exports = {
         return interaction.reply({
           content:`**🙄 - You can only upload files of this type ${formats}**`});
       } 
+      if(pic.size >  2000000) return interaction.reply(`**🙄 - You can't upload files more than 2MB**`);
       let url = pic.url
       let pics = await axios({ url, responseType: "arraybuffer" }).then((res) => Buffer.from(res.data, "binary").toString("base64"))
       let obj = {
