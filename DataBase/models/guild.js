@@ -65,9 +65,8 @@ const data =new Schema({
       }
     },
     background:{
-      type:String,//
-      default: null//new Buffer.from(fs.readFileSync("./welcome.png")).toString('base64')
-      //default: "https://media.discordapp.net/attachments/737470353890082987/947970013892083722/1646066035646.png",
+      type:String,
+      default: null
     }
   },
   autoReply:{
