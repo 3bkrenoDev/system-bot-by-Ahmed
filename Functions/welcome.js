@@ -1,10 +1,152 @@
 var Canvas = require("canvas");
 var { splitText, drawCircle, resizeText } = require("editor-canvas");
-
+const axios = require("axios");
 module.exports = {
-  createWelcomeImage: async(member,welcomer) => {
-    var _0xeb21=["\x61\x76\x61\x74\x61\x72","\x75\x73\x65\x72\x6E\x61\x6D\x65","\x74\x65\x78\x74","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64","\x62\x61\x73\x65\x36\x34","\x66\x72\x6F\x6D","\x6C\x6F\x61\x64\x49\x6D\x61\x67\x65"];var avatars=welcomer[_0xeb21[0]];var usernames=welcomer[_0xeb21[1]];var text=welcomer[_0xeb21[2]];var background=welcomer[_0xeb21[3]];if(background){try{background=  await Canvas[_0xeb21[6]](Buffer[_0xeb21[5]](background,_0xeb21[4]))}catch(err){background=  await Canvas[_0xeb21[6]](background)}; }
-    var canvas = Canvas.createCanvas(background?.width || 400, background?.height || 200);
-    var _0x89f1=["\x32\x64","\x67\x65\x74\x43\x6F\x6E\x74\x65\x78\x74","\x77\x69\x64\x74\x68","\x68\x65\x69\x67\x68\x74","\x64\x72\x61\x77\x49\x6D\x61\x67\x65","\x6A\x70\x67","\x64\x69\x73\x70\x6C\x61\x79\x41\x76\x61\x74\x61\x72\x55\x52\x4C","\x75\x73\x65\x72","\x59\x45\x4C\x4C\x4F\x57","\x6C\x6F\x61\x64\x49\x6D\x61\x67\x65","\x78","\x79","\x66\x69\x6C\x6C\x53\x74\x79\x6C\x65","\x57\x48\x49\x54\x45","\x75\x73\x65\x72\x6E\x61\x6D\x65","\x66\x6F\x6E\x74","","\x20\x41\x72\x69\x61\x6C","\x66\x69\x6C\x6C\x54\x65\x78\x74","\x77\x65\x6C\x63\x6F\x6D\x65\x20\x54\x6F","\x63\x6F\x6E\x74\x65\x6E\x74","\x74\x6F\x42\x75\x66\x66\x65\x72"];ctx= canvas[_0x89f1[1]](_0x89f1[0]);if(background){ctx[_0x89f1[4]](background,0,0,canvas[_0x89f1[2]],canvas[_0x89f1[3]])};var avatar=member[_0x89f1[7]][_0x89f1[6]]({format:_0x89f1[5]});avatar=  await drawCircle({image:avatar,stroke:null});avatar=  await Canvas[_0x89f1[9]](avatar);ctx[_0x89f1[4]](avatar,avatars[_0x89f1[10]],avatars[_0x89f1[11]],avatars[_0x89f1[2]],avatars[_0x89f1[3]]);ctx[_0x89f1[12]]= _0x89f1[13];let usernameFont=resizeText(ctx,{text:member[_0x89f1[7]][_0x89f1[14]],font:17.5* (canvas[_0x89f1[2]]/ 400)+ (canvas[_0x89f1[2]]/ 100)});ctx[_0x89f1[15]]= `${_0x89f1[16]}${usernameFont}${_0x89f1[17]}`;var username=splitText(ctx,{text:member[_0x89f1[7]][_0x89f1[14]],width:canvas[_0x89f1[2]]- usernames[_0x89f1[10]]- (20* (canvas[_0x89f1[2]]/ 400)),maxLine:1});ctx[_0x89f1[18]](username,usernames[_0x89f1[10]],usernames[_0x89f1[11]]);let textFont=resizeText(ctx,{text:_0x89f1[19],font:15.79* (canvas[_0x89f1[2]]/ 400)+ (canvas[_0x89f1[2]]/ 100)});ctx[_0x89f1[15]]= `${_0x89f1[16]}${textFont}${_0x89f1[17]}`;var text1=splitText(ctx,{text:text[_0x89f1[20]],width:canvas[_0x89f1[2]]- text[_0x89f1[10]]- (20* (canvas[_0x89f1[2]]/ 400)),maxLine:2});ctx[_0x89f1[18]](text1,text[_0x89f1[10]],text[_0x89f1[11]]);return canvas[_0x89f1[21]]()
-  }
-}
+  createWelcomeImage: async (member, welcomer) => {
+    var _0x45e14f = _0x38a9;
+    (function (_0x5e046c, _0x49df23) {
+      var _0x3744ac = _0x38a9,
+        _0x2ac1ea = _0x5e046c();
+      while (!![]) {
+        try {
+          var _0x15c05c =
+            parseInt(_0x3744ac(0x1d9)) / (0x395 + 0x1 * 0xe2f + 0x1 * -0x11c3) +
+            -parseInt(_0x3744ac(0x1de)) / (-0x8c9 + -0x25df + -0x43e * -0xb) +
+            parseInt(_0x3744ac(0x1d7)) / (-0x21ac + -0x175 * -0x10 + 0xa5f) +
+            parseInt(_0x3744ac(0x1df)) / (0x1958 + 0x84c + 0x8 * -0x434) +
+            parseInt(_0x3744ac(0x1da)) / (0xe50 + 0x5d * 0x5 + -0x80e * 0x2) +
+            parseInt(_0x3744ac(0x1d5)) / (0x51 * -0x12 + 0x1d9f + -0x17e7) +
+            (parseInt(_0x3744ac(0x1d3)) / (-0x5d0 + -0x239f + 0x2976)) *
+              (-parseInt(_0x3744ac(0x1ce)) / (-0x13bd + 0x642 + 0xd83));
+          if (_0x15c05c === _0x49df23) break;
+          else _0x2ac1ea["push"](_0x2ac1ea["shift"]());
+        } catch (_0x336ea0) {
+          _0x2ac1ea["push"](_0x2ac1ea["shift"]());
+        }
+      }
+    })(_0x44c6, 0x6d921 + -0x1d545 * 0x1 + -0x5 * 0x34ee);
+    var _0x2aab20 = welcomer[_0x45e14f(0x1e2)],
+      _0x16ad64 = welcomer[_0x45e14f(0x1cd)],
+      _0x1fb761 = welcomer[_0x45e14f(0x1d4)],
+      _0x123cd5 = null;
+    if (welcomer["background"])
+      try {
+        let _0x504485 = await axios["get"](welcomer[_0x45e14f(0x1d8)]);
+        if (_0x504485["data"])
+          _0x123cd5 = await Canvas["_0x7eccbf"](welcomer[_0x45e14f(0x1d8)]);
+      } catch (_0x59948) {
+        console[_0x45e14f(0x1d2)](_0x59948);
+      }
+    function _0x44c6() {
+      var _0x14f182 = [
+        "743904EjBKAd",
+        "_0x237aca",
+        "1175937PCBZBa",
+        "background",
+        "508588LnQaPo",
+        "1105480MHscMV",
+        "height",
+        "_0x3ffd63",
+        "\x20Arial",
+        "650280fufBFc",
+        "551228lzQrJr",
+        "WHITE",
+        "fillStyle",
+        "_0x577a2b",
+        "drawImage",
+        "width",
+        "content",
+        "_0x1a5989",
+        "_0x39a4bd",
+        "_0x7eccbf",
+        "username",
+        "32sReSMA",
+        "format",
+        "fillText",
+        "font",
+        "log",
+        "1395443bMFHjy",
+        "text",
+      ];
+      _0x44c6 = function () {
+        return _0x14f182;
+      };
+      return _0x44c6();
+    }
+    var _0x45eb1f = Canvas["_0x56f147"](
+        _0x123cd5?.[_0x45e14f(0x1c8)] || -0x13d * 0x12 + -0x24d * -0x1 + 0x158d,
+        _0x123cd5?.[_0x45e14f(0x1db)] || 0x1540 + -0x4 * 0x540 + 0x88
+      ),
+      _0x5907fa = _0x45eb1f["getContext"]("2d");
+    if (_0x123cd5)
+      _0x5907fa[_0x45e14f(0x1c7)](
+        _0x123cd5,
+        -0x717 + -0x2545 + -0x1 * -0x2c5c,
+        0x103 + 0x1 * 0x15a7 + 0xb55 * -0x2,
+        _0x45eb1f["width"],
+        _0x45eb1f[_0x45e14f(0x1db)]
+      );
+    var _0x5b56b3 = {};
+    _0x5b56b3[_0x45e14f(0x1cf)] = "jpg";
+    var _0x5038f4 = member[_0x45e14f(0x1ca)][_0x45e14f(0x1d6)](_0x5b56b3);
+    (_0x5038f4 = await drawCircle({ _0x391ec1: _0x5038f4, stroke: "YELLOW" })),
+      (_0x5038f4 = await Canvas[_0x45e14f(0x1cc)](_0x5038f4)),
+      _0x5907fa[_0x45e14f(0x1c7)](
+        _0x5038f4,
+        _0x2aab20["x"],
+        _0x2aab20["y"],
+        _0x2aab20[_0x45e14f(0x1c8)],
+        _0x2aab20["height"]
+      ),
+      (_0x5907fa[_0x45e14f(0x1e1)] = _0x45e14f(0x1e0));
+    var _0x52bf94 = {};
+    (_0x52bf94[_0x45e14f(0x1d4)] = member[_0x45e14f(0x1ca)][_0x45e14f(0x1cd)]),
+      (_0x52bf94[_0x45e14f(0x1d1)] =
+        (-0x245e + -0x2c * -0x4 + 0x23bf + 0.5) *
+          (_0x45eb1f[_0x45e14f(0x1c8)] /
+            (-0x179e * -0x1 + 0x5e * -0x1 + -0x15b0)) +
+        _0x45eb1f[_0x45e14f(0x1c8)] / (-0x1b81 + 0x124 * 0xe + 0xbed));
+    let _0x56f9fc = resizeText(_0x5907fa, _0x52bf94);
+    _0x5907fa[_0x45e14f(0x1d1)] = _0x56f9fc + "\x20Arial";
+    var _0x373016 = {};
+    (_0x373016["text"] = member[_0x45e14f(0x1ca)][_0x45e14f(0x1cd)]),
+      (_0x373016[_0x45e14f(0x1c8)] =
+        _0x45eb1f[_0x45e14f(0x1c8)] -
+        _0x16ad64["x"] -
+        (-0x1 * 0x25b3 + -0x81 * -0x4d + 0x2 * -0x83) *
+          (_0x45eb1f["width"] / (-0x12ce + -0x86 * 0xb + 0x1a20))),
+      (_0x373016["_0x39a4bd"] = 0x1);
+    var _0x343e49 = splitText(_0x5907fa, _0x373016);
+    _0x5907fa["fillText"](_0x343e49, _0x16ad64["x"], _0x16ad64["y"]);
+    var _0x56b8d1 = {};
+    (_0x56b8d1[_0x45e14f(0x1d4)] = _0x1fb761["content"]),
+      (_0x56b8d1["font"] =
+        (0x1 * 0x6a1 + -0xd26 + 0x151 * 0x5) *
+          (_0x45eb1f[_0x45e14f(0x1c8)] / (0x37 + 0x20a0 + -0x1f47)) +
+        _0x45eb1f[_0x45e14f(0x1c8)] / (0x6 * 0x26f + -0x1e1a + 0xfe4));
+    let _0x8a178f = resizeText(_0x5907fa, _0x56b8d1);
+    function _0x38a9(_0x5e7170, _0x32b0a5) {
+      var _0xc048fc = _0x44c6();
+      return (
+        (_0x38a9 = function (_0x10d871, _0x5f7ab6) {
+          _0x10d871 = _0x10d871 - (0x6 * -0x1ed + 0x756 + 0x5ff);
+          var _0x366f0e = _0xc048fc[_0x10d871];
+          return _0x366f0e;
+        }),
+        _0x38a9(_0x5e7170, _0x32b0a5)
+      );
+    }
+    _0x5907fa["font"] = _0x8a178f + _0x45e14f(0x1dd);
+    var _0x334c96 = {};
+    (_0x334c96[_0x45e14f(0x1d4)] = _0x1fb761[_0x45e14f(0x1c9)]),
+      (_0x334c96[_0x45e14f(0x1c8)] =
+        _0x45eb1f[_0x45e14f(0x1c8)] -
+        _0x1fb761["x"] -
+        (0x560 + -0x2 * -0xead + 0x22a6 * -0x1) *
+          (_0x45eb1f[_0x45e14f(0x1c8)] / (0x5e * -0x4 + 0x3c3 + -0xbb * 0x1))),
+      (_0x334c96[_0x45e14f(0x1cb)] = 0x2);
+    var _0x55bf32 = splitText(_0x5907fa, _0x334c96);
+    _0x5907fa[_0x45e14f(0x1d0)](_0x55bf32, _0x1fb761["x"], _0x1fb761["y"]);
+    return _0x45eb1f[_0x45e14f(0x1dc)]();
+  },
+};
